@@ -2,13 +2,18 @@ package cn.stu.edu.lin.test;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.alibaba.fastjson.JSON;
 
 import cn.stu.edu.lin.model.User;
 import cn.stu.edu.lin.service.IUserService;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = { "classpath:applicationContext.xml" })
 public class TestMyBatis {
 	private static Logger logger = Logger.getLogger(TestMyBatis.class);
 
@@ -17,13 +22,13 @@ public class TestMyBatis {
 
 	@Test
 	public void test1() {
-		if (userService == null) {
-			System.out.println("aaa");
+
+		try {
+			User user = userService.getUserById(1);
+			logger.info(JSON.toJSONString(user));
+		} catch (NullPointerException e) {
+			e.printStackTrace();
 		}
 
-		User user = userService.getUserById(1);
-		// System.out.println(user.getUserName());
-		// logger.info("值："+user.getUserName());
-		logger.info(JSON.toJSONString(user));
 	}
 }
