@@ -9,6 +9,8 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'war'
+apply plugin: "eclipse"
+
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -31,6 +33,8 @@ ext{
 	commons_dbcpVersion="1.2.2"
 	jstlVersion="1.2"
 	jacksonVersion="1.9.13"
+	servlet_apiVersion="2.5"
+	jsp_apiVersion="2.1"
 }
 
 dependencies {
@@ -74,6 +78,10 @@ dependencies {
 	
 	//jackson
 	compile "org.codehaus.jackson:jackson-mapper-asl:$jacksonVersion"
+	
+	//servlet
+	compile "javax.servlet:servlet-api:$servlet_apiVersion"
+	compile "javax.servlet.jsp:jsp-api:$jsp_apiVersion"
 
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
