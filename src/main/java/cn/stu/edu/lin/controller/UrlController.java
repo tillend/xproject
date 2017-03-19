@@ -12,7 +12,7 @@ public class UrlController {
 
 	@RequestMapping("/index")
 	public String toIndex(HttpServletRequest request, Model model) {
-
+		System.out.println("here");
 		return "index";
 	}
 }
