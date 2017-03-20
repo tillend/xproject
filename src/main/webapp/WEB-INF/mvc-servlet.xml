@@ -16,7 +16,9 @@
 	<!-- 自动扫描 -->
 	<context:component-scan base-package="cn.stu.edu.lin.controller"/>
 	
+	<!-- 静态资源配置 -->
 	<mvc:resources mapping="/styles/**" location="/styles/" />
+		
 	<!-- 启用spring mvc注解驱动，spring会自动为我们注册必要的几个Bean -->
     <mvc:annotation-driven />
 
