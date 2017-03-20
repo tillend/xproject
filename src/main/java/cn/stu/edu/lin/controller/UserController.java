@@ -1,26 +1,30 @@
 package cn.stu.edu.lin.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
+import cn.stu.edu.lin.common.Resp;
 import cn.stu.edu.lin.model.User;
 import cn.stu.edu.lin.service.IUserService;
 
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
 	@Autowired
 	private IUserService userService;
 
-	@RequestMapping("/showUser")
-	public String toIndex(HttpServletRequest request, Model model) {
-		int userId = Integer.parseInt(request.getParameter("id"));
-		User user = this.userService.getUserById(userId);
-		model.addAttribute("user", user);
-		return "showUser";
+	@RequestMapping(value = "/getUser", method = RequestMethod.GET)
+	public ResponseEntity<Resp> getUser() {
+		ResponseEntity<Resp> responseEntity = null;
+
+		int userId = 1;
+		User user = userService.getUserById(userId);
+
+		responseEntity = Resp.createSuccess(user);
+
+		return responseEntity;
 	}
 }

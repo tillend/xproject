@@ -33,7 +33,7 @@ ext{
 	mysqlVersion="5.1.39"
 	commons_dbcpVersion="1.2.2"
 	jstlVersion="1.2"
-	jacksonVersion="1.9.13"
+	jackson2Version="2.4.6"
 	servlet_apiVersion="2.5"
 	jsp_apiVersion="2.1"
 }
@@ -79,7 +79,7 @@ dependencies {
 	compile "jstl:jstl:$jstlVersion"
 	
 	//jackson
-	compile "org.codehaus.jackson:jackson-mapper-asl:$jacksonVersion"
+	compile "com.fasterxml.jackson.core:jackson-databind:${jackson2Version}"
 	
 	//servlet
 	compile "javax.servlet:servlet-api:$servlet_apiVersion"
