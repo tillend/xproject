@@ -12,9 +12,6 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
-
-	<!-- 自动扫描 -->
-	<context:component-scan base-package="cn.stu.edu.lin.*"/>
 	
 	<!-- 引入配置文件 -->
 	<bean id="propertyConfigurer"
@@ -58,5 +55,9 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	
+	<!-- 自动扫描 -->
+	<context:component-scan base-package="cn.stu.edu.lin.service"/>
+	<context:component-scan base-package="cn.stu.edu.lin.dao"/>
 
 </beans>
