@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stu.edu.lin.dao.UserIntegralMapper">
+  <resultMap id="BaseResultMap" type="cn.stu.edu.lin.model.UserIntegral">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="level" jdbcType="VARCHAR" property="level" />
+    <result column="integral" jdbcType="VARCHAR" property="integral" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userId, level, integral
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_integral
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user_integral
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.stu.edu.lin.model.UserIntegral">
+    insert into user_integral (id, userId, level, 
+      integral)
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{level,jdbcType=VARCHAR}, 
+      #{integral,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.stu.edu.lin.model.UserIntegral">
+    insert into user_integral
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="level != null">
+        level,
+      </if>
+      <if test="integral != null">
+        integral,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="integral != null">
+        #{integral,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.stu.edu.lin.model.UserIntegral">
+    update user_integral
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="level != null">
+        level = #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="integral != null">
+        integral = #{integral,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.stu.edu.lin.model.UserIntegral">
+    update user_integral
+    set userId = #{userid,jdbcType=INTEGER},
+      level = #{level,jdbcType=VARCHAR},
+      integral = #{integral,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="cn.stu.edu.lin.model.UserIntegral">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="level" jdbcType="VARCHAR" property="level" />
+    <result column="integral" jdbcType="VARCHAR" property="integral" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userId, level, integral
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_integral
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user_integral
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.stu.edu.lin.model.UserIntegral">
+    insert into user_integral (id, userId, level, 
+      integral)
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{level,jdbcType=VARCHAR}, 
+      #{integral,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.stu.edu.lin.model.UserIntegral">
+    insert into user_integral
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="level != null">
+        level,
+      </if>
+      <if test="integral != null">
+        integral,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="integral != null">
+        #{integral,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.stu.edu.lin.model.UserIntegral">
+    update user_integral
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="level != null">
+        level = #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="integral != null">
+        integral = #{integral,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.stu.edu.lin.model.UserIntegral">
+    update user_integral
+    set userId = #{userid,jdbcType=INTEGER},
+      level = #{level,jdbcType=VARCHAR},
+      integral = #{integral,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

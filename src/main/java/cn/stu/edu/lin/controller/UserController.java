@@ -13,6 +13,7 @@ import cn.stu.edu.lin.service.IUserService;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
 	@Autowired
 	private IUserService userService;
 

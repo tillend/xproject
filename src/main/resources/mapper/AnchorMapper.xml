@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stu.edu.lin.dao.AnchorMapper">
+  <resultMap id="BaseResultMap" type="cn.stu.edu.lin.model.Anchor">
+    <id column="anchorId" jdbcType="INTEGER" property="anchorid" />
+    <result column="anchorName" jdbcType="VARCHAR" property="anchorname" />
+    <result column="level" jdbcType="VARCHAR" property="level" />
+    <result column="integral" jdbcType="VARCHAR" property="integral" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    anchorId, anchorName, level, integral
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from anchor
+    where anchorId = #{anchorid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from anchor
+    where anchorId = #{anchorid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.stu.edu.lin.model.Anchor">
+    insert into anchor (anchorId, anchorName, level, 
+      integral)
+    values (#{anchorid,jdbcType=INTEGER}, #{anchorname,jdbcType=VARCHAR}, #{level,jdbcType=VARCHAR}, 
+      #{integral,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.stu.edu.lin.model.Anchor">
+    insert into anchor
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="anchorid != null">
+        anchorId,
+      </if>
+      <if test="anchorname != null">
+        anchorName,
+      </if>
+      <if test="level != null">
+        level,
+      </if>
+      <if test="integral != null">
+        integral,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="anchorid != null">
+        #{anchorid,jdbcType=INTEGER},
+      </if>
+      <if test="anchorname != null">
+        #{anchorname,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="integral != null">
+        #{integral,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.stu.edu.lin.model.Anchor">
+    update anchor
+    <set>
+      <if test="anchorname != null">
+        anchorName = #{anchorname,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        level = #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="integral != null">
+        integral = #{integral,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where anchorId = #{anchorid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.stu.edu.lin.model.Anchor">
+    update anchor
+    set anchorName = #{anchorname,jdbcType=VARCHAR},
+      level = #{level,jdbcType=VARCHAR},
+      integral = #{integral,jdbcType=VARCHAR}
+    where anchorId = #{anchorid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="cn.stu.edu.lin.model.Anchor">
+    <id column="anchorId" jdbcType="INTEGER" property="anchorid" />
+    <result column="anchorName" jdbcType="VARCHAR" property="anchorname" />
+    <result column="level" jdbcType="VARCHAR" property="level" />
+    <result column="integral" jdbcType="VARCHAR" property="integral" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    anchorId, anchorName, level, integral
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from anchor
+    where anchorId = #{anchorid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from anchor
+    where anchorId = #{anchorid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.stu.edu.lin.model.Anchor">
+    insert into anchor (anchorId, anchorName, level, 
+      integral)
+    values (#{anchorid,jdbcType=INTEGER}, #{anchorname,jdbcType=VARCHAR}, #{level,jdbcType=VARCHAR}, 
+      #{integral,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.stu.edu.lin.model.Anchor">
+    insert into anchor
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="anchorid != null">
+        anchorId,
+      </if>
+      <if test="anchorname != null">
+        anchorName,
+      </if>
+      <if test="level != null">
+        level,
+      </if>
+      <if test="integral != null">
+        integral,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="anchorid != null">
+        #{anchorid,jdbcType=INTEGER},
+      </if>
+      <if test="anchorname != null">
+        #{anchorname,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="integral != null">
+        #{integral,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.stu.edu.lin.model.Anchor">
+    update anchor
+    <set>
+      <if test="anchorname != null">
+        anchorName = #{anchorname,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+        level = #{level,jdbcType=VARCHAR},
+      </if>
+      <if test="integral != null">
+        integral = #{integral,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where anchorId = #{anchorid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.stu.edu.lin.model.Anchor">
+    update anchor
+    set anchorName = #{anchorname,jdbcType=VARCHAR},
+      level = #{level,jdbcType=VARCHAR},
+      integral = #{integral,jdbcType=VARCHAR}
+    where anchorId = #{anchorid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stu.edu.lin.dao.RoomMapper">
+  <resultMap id="BaseResultMap" type="cn.stu.edu.lin.model.Room">
+    <id column="roomNum" jdbcType="INTEGER" property="roomnum" />
+    <result column="anchorId" jdbcType="INTEGER" property="anchorid" />
+    <result column="roomName" jdbcType="VARCHAR" property="roomname" />
+    <result column="roomMessage" jdbcType="VARCHAR" property="roommessage" />
+    <result column="userCount" jdbcType="INTEGER" property="usercount" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    roomNum, anchorId, roomName, roomMessage, userCount, type, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from room
+    where roomNum = #{roomnum,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from room
+    where roomNum = #{roomnum,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.stu.edu.lin.model.Room">
+    insert into room (roomNum, anchorId, roomName, 
+      roomMessage, userCount, type, 
+      status)
+    values (#{roomnum,jdbcType=INTEGER}, #{anchorid,jdbcType=INTEGER}, #{roomname,jdbcType=VARCHAR}, 
+      #{roommessage,jdbcType=VARCHAR}, #{usercount,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.stu.edu.lin.model.Room">
+    insert into room
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roomnum != null">
+        roomNum,
+      </if>
+      <if test="anchorid != null">
+        anchorId,
+      </if>
+      <if test="roomname != null">
+        roomName,
+      </if>
+      <if test="roommessage != null">
+        roomMessage,
+      </if>
+      <if test="usercount != null">
+        userCount,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roomnum != null">
+        #{roomnum,jdbcType=INTEGER},
+      </if>
+      <if test="anchorid != null">
+        #{anchorid,jdbcType=INTEGER},
+      </if>
+      <if test="roomname != null">
+        #{roomname,jdbcType=VARCHAR},
+      </if>
+      <if test="roommessage != null">
+        #{roommessage,jdbcType=VARCHAR},
+      </if>
+      <if test="usercount != null">
+        #{usercount,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.stu.edu.lin.model.Room">
+    update room
+    <set>
+      <if test="anchorid != null">
+        anchorId = #{anchorid,jdbcType=INTEGER},
+      </if>
+      <if test="roomname != null">
+        roomName = #{roomname,jdbcType=VARCHAR},
+      </if>
+      <if test="roommessage != null">
+        roomMessage = #{roommessage,jdbcType=VARCHAR},
+      </if>
+      <if test="usercount != null">
+        userCount = #{usercount,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where roomNum = #{roomnum,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.stu.edu.lin.model.Room">
+    update room
+    set anchorId = #{anchorid,jdbcType=INTEGER},
+      roomName = #{roomname,jdbcType=VARCHAR},
+      roomMessage = #{roommessage,jdbcType=VARCHAR},
+      userCount = #{usercount,jdbcType=INTEGER},
+      type = #{type,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR}
+    where roomNum = #{roomnum,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="cn.stu.edu.lin.model.Room">
+    <id column="roomNum" jdbcType="INTEGER" property="roomnum" />
+    <result column="anchorId" jdbcType="INTEGER" property="anchorid" />
+    <result column="roomName" jdbcType="VARCHAR" property="roomname" />
+    <result column="roomMessage" jdbcType="VARCHAR" property="roommessage" />
+    <result column="userCount" jdbcType="INTEGER" property="usercount" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    roomNum, anchorId, roomName, roomMessage, userCount, type, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from room
+    where roomNum = #{roomnum,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from room
+    where roomNum = #{roomnum,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.stu.edu.lin.model.Room">
+    insert into room (roomNum, anchorId, roomName, 
+      roomMessage, userCount, type, 
+      status)
+    values (#{roomnum,jdbcType=INTEGER}, #{anchorid,jdbcType=INTEGER}, #{roomname,jdbcType=VARCHAR}, 
+      #{roommessage,jdbcType=VARCHAR}, #{usercount,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.stu.edu.lin.model.Room">
+    insert into room
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roomnum != null">
+        roomNum,
+      </if>
+      <if test="anchorid != null">
+        anchorId,
+      </if>
+      <if test="roomname != null">
+        roomName,
+      </if>
+      <if test="roommessage != null">
+        roomMessage,
+      </if>
+      <if test="usercount != null">
+        userCount,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roomnum != null">
+        #{roomnum,jdbcType=INTEGER},
+      </if>
+      <if test="anchorid != null">
+        #{anchorid,jdbcType=INTEGER},
+      </if>
+      <if test="roomname != null">
+        #{roomname,jdbcType=VARCHAR},
+      </if>
+      <if test="roommessage != null">
+        #{roommessage,jdbcType=VARCHAR},
+      </if>
+      <if test="usercount != null">
+        #{usercount,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.stu.edu.lin.model.Room">
+    update room
+    <set>
+      <if test="anchorid != null">
+        anchorId = #{anchorid,jdbcType=INTEGER},
+      </if>
+      <if test="roomname != null">
+        roomName = #{roomname,jdbcType=VARCHAR},
+      </if>
+      <if test="roommessage != null">
+        roomMessage = #{roommessage,jdbcType=VARCHAR},
+      </if>
+      <if test="usercount != null">
+        userCount = #{usercount,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where roomNum = #{roomnum,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.stu.edu.lin.model.Room">
+    update room
+    set anchorId = #{anchorid,jdbcType=INTEGER},
+      roomName = #{roomname,jdbcType=VARCHAR},
+      roomMessage = #{roommessage,jdbcType=VARCHAR},
+      userCount = #{usercount,jdbcType=INTEGER},
+      type = #{type,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR}
+    where roomNum = #{roomnum,jdbcType=INTEGER}
+  </update>
+</mapper>
