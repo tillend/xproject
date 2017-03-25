@@ -1,30 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.stu.edu.lin.dao.UserMapper">
-  <resultMap id="BaseResultMap" type="cn.stu.edu.lin.model.User">
-    <id column="userId" jdbcType="INTEGER" property="userid" />
-    <result column="account" jdbcType="VARCHAR" property="account" />
-    <result column="userName" jdbcType="VARCHAR" property="username" />
-    <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="email" jdbcType="VARCHAR" property="email" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="status" jdbcType="VARCHAR" property="status" />
-    <result column="anchorId" jdbcType="INTEGER" property="anchorid" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.stu.edu.lin.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="cn.stu.edu.lin.model.User" >
+    <id column="userId" property="userid" jdbcType="INTEGER" />
+    <result column="account" property="account" jdbcType="VARCHAR" />
+    <result column="userName" property="username" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="anchorId" property="anchorid" jdbcType="INTEGER" />
   </resultMap>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" >
     userId, account, userName, phone, email, password, status, anchorId
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from user
     where userId = #{userid,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from user
     where userId = #{userid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="cn.stu.edu.lin.model.User">
+  <insert id="insert" parameterType="cn.stu.edu.lin.model.User" >
     insert into user (userId, account, userName, 
       phone, email, password, 
       status, anchorId)
@@ -32,213 +32,89 @@
       #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{status,jdbcType=VARCHAR}, #{anchorid,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="cn.stu.edu.lin.model.User">
+  <insert id="insertSelective" parameterType="cn.stu.edu.lin.model.User" >
     insert into user
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="userid != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
         userId,
       </if>
-      <if test="account != null">
+      <if test="account != null" >
         account,
       </if>
-      <if test="username != null">
+      <if test="username != null" >
         userName,
       </if>
-      <if test="phone != null">
+      <if test="phone != null" >
         phone,
       </if>
-      <if test="email != null">
+      <if test="email != null" >
         email,
       </if>
-      <if test="password != null">
+      <if test="password != null" >
         password,
       </if>
-      <if test="status != null">
+      <if test="status != null" >
         status,
       </if>
-      <if test="anchorid != null">
+      <if test="anchorid != null" >
         anchorId,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="userid != null">
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
         #{userid,jdbcType=INTEGER},
       </if>
-      <if test="account != null">
+      <if test="account != null" >
         #{account,jdbcType=VARCHAR},
       </if>
-      <if test="username != null">
+      <if test="username != null" >
         #{username,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null">
+      <if test="phone != null" >
         #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="email != null">
+      <if test="email != null" >
         #{email,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
+      <if test="password != null" >
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="status != null">
+      <if test="status != null" >
         #{status,jdbcType=VARCHAR},
       </if>
-      <if test="anchorid != null">
+      <if test="anchorid != null" >
         #{anchorid,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.stu.edu.lin.model.User">
+  <update id="updateByPrimaryKeySelective" parameterType="cn.stu.edu.lin.model.User" >
     update user
-    <set>
-      <if test="account != null">
+    <set >
+      <if test="account != null" >
         account = #{account,jdbcType=VARCHAR},
       </if>
-      <if test="username != null">
+      <if test="username != null" >
         userName = #{username,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null">
+      <if test="phone != null" >
         phone = #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="email != null">
+      <if test="email != null" >
         email = #{email,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
+      <if test="password != null" >
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="status != null">
+      <if test="status != null" >
         status = #{status,jdbcType=VARCHAR},
       </if>
-      <if test="anchorid != null">
+      <if test="anchorid != null" >
         anchorId = #{anchorid,jdbcType=INTEGER},
       </if>
     </set>
     where userId = #{userid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.stu.edu.lin.model.User">
-    update user
-    set account = #{account,jdbcType=VARCHAR},
-      userName = #{username,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      status = #{status,jdbcType=VARCHAR},
-      anchorId = #{anchorid,jdbcType=INTEGER}
-    where userId = #{userid,jdbcType=INTEGER}
-  </update>
-  <resultMap id="BaseResultMap" type="cn.stu.edu.lin.model.User">
-    <id column="userId" jdbcType="INTEGER" property="userid" />
-    <result column="account" jdbcType="VARCHAR" property="account" />
-    <result column="userName" jdbcType="VARCHAR" property="username" />
-    <result column="phone" jdbcType="VARCHAR" property="phone" />
-    <result column="email" jdbcType="VARCHAR" property="email" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="status" jdbcType="VARCHAR" property="status" />
-    <result column="anchorId" jdbcType="INTEGER" property="anchorid" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    userId, account, userName, phone, email, password, status, anchorId
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from user
-    where userId = #{userid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from user
-    where userId = #{userid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="cn.stu.edu.lin.model.User">
-    insert into user (userId, account, userName, 
-      phone, email, password, 
-      status, anchorId)
-    values (#{userid,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{status,jdbcType=VARCHAR}, #{anchorid,jdbcType=INTEGER})
-  </insert>
-  <insert id="insertSelective" parameterType="cn.stu.edu.lin.model.User">
-    insert into user
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="userid != null">
-        userId,
-      </if>
-      <if test="account != null">
-        account,
-      </if>
-      <if test="username != null">
-        userName,
-      </if>
-      <if test="phone != null">
-        phone,
-      </if>
-      <if test="email != null">
-        email,
-      </if>
-      <if test="password != null">
-        password,
-      </if>
-      <if test="status != null">
-        status,
-      </if>
-      <if test="anchorid != null">
-        anchorId,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="userid != null">
-        #{userid,jdbcType=INTEGER},
-      </if>
-      <if test="account != null">
-        #{account,jdbcType=VARCHAR},
-      </if>
-      <if test="username != null">
-        #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="phone != null">
-        #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null">
-        #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        #{status,jdbcType=VARCHAR},
-      </if>
-      <if test="anchorid != null">
-        #{anchorid,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.stu.edu.lin.model.User">
-    update user
-    <set>
-      <if test="account != null">
-        account = #{account,jdbcType=VARCHAR},
-      </if>
-      <if test="username != null">
-        userName = #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="phone != null">
-        phone = #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null">
-        email = #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        status = #{status,jdbcType=VARCHAR},
-      </if>
-      <if test="anchorid != null">
-        anchorId = #{anchorid,jdbcType=INTEGER},
-      </if>
-    </set>
-    where userId = #{userid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.stu.edu.lin.model.User">
+  <update id="updateByPrimaryKey" parameterType="cn.stu.edu.lin.model.User" >
     update user
     set account = #{account,jdbcType=VARCHAR},
       userName = #{username,jdbcType=VARCHAR},

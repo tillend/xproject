@@ -1,177 +1,88 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.stu.edu.lin.dao.RoomSignMapper">
-  <resultMap id="BaseResultMap" type="cn.stu.edu.lin.model.RoomSign">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="roomNum" jdbcType="INTEGER" property="roomnum" />
-    <result column="sign1" jdbcType="VARCHAR" property="sign1" />
-    <result column="sign2" jdbcType="VARCHAR" property="sign2" />
-    <result column="sign3" jdbcType="VARCHAR" property="sign3" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.stu.edu.lin.dao.RoomSignMapper" >
+  <resultMap id="BaseResultMap" type="cn.stu.edu.lin.model.RoomSign" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="roomNum" property="roomnum" jdbcType="INTEGER" />
+    <result column="sign1" property="sign1" jdbcType="VARCHAR" />
+    <result column="sign2" property="sign2" jdbcType="VARCHAR" />
+    <result column="sign3" property="sign3" jdbcType="VARCHAR" />
   </resultMap>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" >
     id, roomNum, sign1, sign2, sign3
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from room_sign
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from room_sign
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="cn.stu.edu.lin.model.RoomSign">
+  <insert id="insert" parameterType="cn.stu.edu.lin.model.RoomSign" >
     insert into room_sign (id, roomNum, sign1, 
       sign2, sign3)
     values (#{id,jdbcType=INTEGER}, #{roomnum,jdbcType=INTEGER}, #{sign1,jdbcType=VARCHAR}, 
       #{sign2,jdbcType=VARCHAR}, #{sign3,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.stu.edu.lin.model.RoomSign">
+  <insert id="insertSelective" parameterType="cn.stu.edu.lin.model.RoomSign" >
     insert into room_sign
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
         id,
       </if>
-      <if test="roomnum != null">
+      <if test="roomnum != null" >
         roomNum,
       </if>
-      <if test="sign1 != null">
+      <if test="sign1 != null" >
         sign1,
       </if>
-      <if test="sign2 != null">
+      <if test="sign2 != null" >
         sign2,
       </if>
-      <if test="sign3 != null">
+      <if test="sign3 != null" >
         sign3,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="roomnum != null">
+      <if test="roomnum != null" >
         #{roomnum,jdbcType=INTEGER},
       </if>
-      <if test="sign1 != null">
+      <if test="sign1 != null" >
         #{sign1,jdbcType=VARCHAR},
       </if>
-      <if test="sign2 != null">
+      <if test="sign2 != null" >
         #{sign2,jdbcType=VARCHAR},
       </if>
-      <if test="sign3 != null">
+      <if test="sign3 != null" >
         #{sign3,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.stu.edu.lin.model.RoomSign">
+  <update id="updateByPrimaryKeySelective" parameterType="cn.stu.edu.lin.model.RoomSign" >
     update room_sign
-    <set>
-      <if test="roomnum != null">
+    <set >
+      <if test="roomnum != null" >
         roomNum = #{roomnum,jdbcType=INTEGER},
       </if>
-      <if test="sign1 != null">
+      <if test="sign1 != null" >
         sign1 = #{sign1,jdbcType=VARCHAR},
       </if>
-      <if test="sign2 != null">
+      <if test="sign2 != null" >
         sign2 = #{sign2,jdbcType=VARCHAR},
       </if>
-      <if test="sign3 != null">
+      <if test="sign3 != null" >
         sign3 = #{sign3,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.stu.edu.lin.model.RoomSign">
-    update room_sign
-    set roomNum = #{roomnum,jdbcType=INTEGER},
-      sign1 = #{sign1,jdbcType=VARCHAR},
-      sign2 = #{sign2,jdbcType=VARCHAR},
-      sign3 = #{sign3,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <resultMap id="BaseResultMap" type="cn.stu.edu.lin.model.RoomSign">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="roomNum" jdbcType="INTEGER" property="roomnum" />
-    <result column="sign1" jdbcType="VARCHAR" property="sign1" />
-    <result column="sign2" jdbcType="VARCHAR" property="sign2" />
-    <result column="sign3" jdbcType="VARCHAR" property="sign3" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, roomNum, sign1, sign2, sign3
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from room_sign
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from room_sign
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="cn.stu.edu.lin.model.RoomSign">
-    insert into room_sign (id, roomNum, sign1, 
-      sign2, sign3)
-    values (#{id,jdbcType=INTEGER}, #{roomnum,jdbcType=INTEGER}, #{sign1,jdbcType=VARCHAR}, 
-      #{sign2,jdbcType=VARCHAR}, #{sign3,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="cn.stu.edu.lin.model.RoomSign">
-    insert into room_sign
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="roomnum != null">
-        roomNum,
-      </if>
-      <if test="sign1 != null">
-        sign1,
-      </if>
-      <if test="sign2 != null">
-        sign2,
-      </if>
-      <if test="sign3 != null">
-        sign3,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="roomnum != null">
-        #{roomnum,jdbcType=INTEGER},
-      </if>
-      <if test="sign1 != null">
-        #{sign1,jdbcType=VARCHAR},
-      </if>
-      <if test="sign2 != null">
-        #{sign2,jdbcType=VARCHAR},
-      </if>
-      <if test="sign3 != null">
-        #{sign3,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.stu.edu.lin.model.RoomSign">
-    update room_sign
-    <set>
-      <if test="roomnum != null">
-        roomNum = #{roomnum,jdbcType=INTEGER},
-      </if>
-      <if test="sign1 != null">
-        sign1 = #{sign1,jdbcType=VARCHAR},
-      </if>
-      <if test="sign2 != null">
-        sign2 = #{sign2,jdbcType=VARCHAR},
-      </if>
-      <if test="sign3 != null">
-        sign3 = #{sign3,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.stu.edu.lin.model.RoomSign">
+  <update id="updateByPrimaryKey" parameterType="cn.stu.edu.lin.model.RoomSign" >
     update room_sign
     set roomNum = #{roomnum,jdbcType=INTEGER},
       sign1 = #{sign1,jdbcType=VARCHAR},

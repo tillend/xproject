@@ -1,4 +1,8 @@
 <%@ page language="java" pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -10,7 +14,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Fixed Top Navbar Example for Bootstrap</title>
+    <title>直播平台</title>
 
     <!-- Bootstrap core CSS -->
     <link href="styles/css/bootstrap.min.css" rel="stylesheet">
@@ -57,27 +61,46 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Default</a></li>
-            <li><a href="../navbar-static-top/">Static top</a></li>
-            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+            <li><a href="../navbar/">关注</a></li>
+            <li><a href="../navbar-static-top/">登录</a></li>
+            <li class="active"><a href="./">注销<span class="sr-only">(current)</span></a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container" stlye="background-image:url(<%=basePath %>styles/images/bg.jpg);">
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>To see the difference between static and fixed top navbars, just scroll.</p>
+        <h2>基于流媒体技术的Web平台视频直播系统</h2>
+        <p>　　视频直播是指利用互联网及流媒体技术进行直播，视频因融合了图像、文字、声音等丰富元素，声形并茂，效果极佳，逐渐成为互联网的主流表达方式。随时互联网络技术的发展，网络视频直播倍受关注，视频直播也让网络变得不再虚拟，更具现实也更贴近生活。在此背景下，结合流媒体技术，研发一个视频直播网站，具有一定的理论意义和实际价值。</p>
         <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">待完善&raquo;</a>
         </p>
       </div>
+      
+  		      <div class="jumbotron">
+<table class="table">
+<tr><td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></td>
+<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
+<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
+<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
+<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
+<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
+</tr>
 
-    </div> <!-- /container -->
+<tr><td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></td>
+<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
+<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
+<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
+<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
+<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
+</tr>
+
+</table>
+      </div>
+	</div> <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript
