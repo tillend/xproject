@@ -8,28 +8,36 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cn.stu.edu.lin.common.Resp;
 import cn.stu.edu.lin.common.RespCode;
-import cn.stu.edu.lin.model.User;
 import cn.stu.edu.lin.service.IUserService;
 
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/")
+public class LoginController {
 
 	@Autowired
 	private IUserService userService;
 
-	@RequestMapping(value = "/getUser", method = RequestMethod.GET)
-	public ResponseEntity<Resp> getUser() {
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ResponseEntity<Resp> userLogin() {
 		ResponseEntity<Resp> responseEntity = null;
 
 		try {
-			int userId = 1;
-			User user = userService.getUserById(userId);
-
-			responseEntity = Resp.createSuccess(user);
-
+			// TODO check user
 		} catch (Exception e) {
-			responseEntity = Resp.createError(RespCode.BUSINESS_INVALID, "user.1000", "获取用户信息失败");
+			responseEntity = Resp.createError(RespCode.BUSINESS_INVALID, "login.fail", "登录失败");
+		}
+
+		return responseEntity;
+	}
+
+	@RequestMapping(value = "/logout", method = RequestMethod.POST)
+	public ResponseEntity<Resp> userLogout() {
+		ResponseEntity<Resp> responseEntity = null;
+
+		try {
+			// TODO LoginContext注销
+		} catch (Exception e) {
+			responseEntity = Resp.createError(RespCode.BUSINESS_INVALID, "system.error", "系统错误");
 		}
 
 		return responseEntity;
