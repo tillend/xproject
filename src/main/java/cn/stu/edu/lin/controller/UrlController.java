@@ -24,4 +24,10 @@ public class UrlController {
 		// System.out.println("here");
 		return "play";
 	}
+
+	@RequestMapping("/star")
+	public String toStar() {
+		// System.out.println("here");
+		return "star";
+	}
 }
