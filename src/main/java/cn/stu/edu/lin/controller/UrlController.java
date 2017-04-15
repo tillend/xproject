@@ -12,4 +12,16 @@ public class UrlController {
 		// System.out.println("here");
 		return "index";
 	}
+
+	@RequestMapping("/player")
+	public String toPlayer() {
+		// System.out.println("here");
+		return "player";
+	}
+
+	@RequestMapping("/play")
+	public String toPlay() {
+		// System.out.println("here");
+		return "play";
+	}
 }
