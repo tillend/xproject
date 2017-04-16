@@ -17,6 +17,11 @@ public class UrlController {
 		return "login";
 	}
 
+	@RequestMapping("/sign_up")
+	public String toSignUp() {
+		return "sign_up";
+	}
+
 	@RequestMapping("/play")
 	public String toPlay() {
 		return "play";

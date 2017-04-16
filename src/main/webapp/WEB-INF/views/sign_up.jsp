@@ -31,8 +31,11 @@
                         <div class="col-sm-6 col-sm-offset-3 form-box">
                         	<div class="form-top">
                         		<div class="form-top-left">
-                        			<h3>登录希声</h3>
-                            		<h5>登录 | 注册</h5>
+                        			<h2>注册账号</h2>
+                            		<h4>
+                            			<a href="/login">登录</a><b> | </b>
+                            			<a class=".active" href="/sign_up">注册</a>
+                            		</h4>
                                     
                         		</div>
                         		<div class="form-top-right">
@@ -49,7 +52,11 @@
 			                        	<label class="sr-only" for="form-password">密码</label>
 			                        	<input type="password" name="form-password" placeholder="密码" class="form-password form-control" id="form-password">
 			                        </div>
-			                        <button type="submit" class="btn">登录</button>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="form-password2">再次输入密码</label>
+			                        	<input type="password" name="form-password2" placeholder="再次输入密码" class="form-password form-control" id="form-password2">
+			                        </div>
+			                        <button type="submit" class="btn">注册</button>
 			                    </form>
 		                    </div>
                         </div>
