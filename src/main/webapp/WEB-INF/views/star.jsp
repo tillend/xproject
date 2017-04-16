@@ -22,6 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- Custom styles for this template -->
     <link href="styles/css/navbar-fixed-top.css" rel="stylesheet">
     <link href="styles/css/common.css" rel="stylesheet">
+    <link href="styles/css/list.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -30,10 +31,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <![endif]-->
   </head>
 
-  <body>
+  <body style="background-color: #F2F2F2">
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #F5F5F5">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">

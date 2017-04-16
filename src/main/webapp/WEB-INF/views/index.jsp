@@ -18,6 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     <!-- Bootstrap core CSS -->
     <link href="styles/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/css/common.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="styles/css/navbar-fixed-top.css" rel="stylesheet">

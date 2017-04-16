@@ -9,25 +9,21 @@ public class UrlController {
 
 	@RequestMapping("/index")
 	public String toIndex() {
-		// System.out.println("here");
 		return "index";
 	}
 
-	@RequestMapping("/player")
-	public String toPlayer() {
-		// System.out.println("here");
-		return "player";
+	@RequestMapping("/login")
+	public String toLogin() {
+		return "login";
 	}
 
 	@RequestMapping("/play")
 	public String toPlay() {
-		// System.out.println("here");
 		return "play";
 	}
 
 	@RequestMapping("/star")
 	public String toStar() {
-		// System.out.println("here");
 		return "star";
 	}
 }

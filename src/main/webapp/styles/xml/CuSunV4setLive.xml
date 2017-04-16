@@ -51,8 +51,8 @@
 		ShowJcScpAFront = "no"
 		JcScpCountDowns = "5"
 		JcScpCountDownsPosition = "top-right"
-		JcScpAFrontW = "730"
-		JcScpAFrontH = "454"
+		JcScpAFrontW = "1280"
+		JcScpAFrontH = "750"
 		JcScpAFrontPath = "other/a730x454_01.jpg|other/a730x454_02.jpg|other/a730x454_03.jpg"
 		JcScpAFrontLink = "http://www.cuplayer.com/CuPlayer/link/L011.html|http://www.cuplayer.com/CuPlayer/link/L012.html|http://www.cuplayer.com/CuPlayer/link/L013.html"
 		 

@@ -21,6 +21,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     <!-- Custom styles for this template -->
     <link href="styles/css/navbar-fixed-top.css" rel="stylesheet">
+    <link href="styles/css/common.css" rel="stylesheet">
+    <link href="styles/css/room.css" rel="stylesheet">
+    <link href="styles/css/list.css" rel="stylesheet">
+    
+    <script type="text/javascript" src="styles/js/swfobject.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -29,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <![endif]-->
   </head>
 
-  <body stlye="background-image:url(styles/images/bg.jpg);">
+  <body>
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -69,34 +74,85 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </div>
     </nav>
 
-    <div class="container">
-		<div class="close_light_bg" id="close_light_bg"></div>
-<!--极酷阳光播放器/代码开始-->
-<script type="text/javascript" src="styles/js/swfobject.js"></script>
-<div class="video" id="CuPlayer"><b><img src="images/loading.gif"  /> 网页视频播放器加载中，请稍后...<a href="http://www.cuplayer.com/cuplayer" target="_blank">点此升级&gt;&gt;</a></b></div>
-<script type="text/javascript">
-var so = new SWFObject("styles/xml/player.swf","myCuPlayer","700","410","9","#000000");
-so.addParam("allowfullscreen","true");
-so.addParam("allowscriptaccess","always");
-so.addParam("wmode","opaque");
-so.addParam("quality","high");
-so.addParam("salign","lt");
-//播放器设置文件-----------------------------
-so.addVariable("JcScpFile","CuSunV2setLive.xml"); //配置文件
-//视频文件及略缩图--------------------------
-/* 以下这行仅为rtmp直播时写法示例，直播信号是关的，请对应换成你自己的直播流使用 */
-so.addVariable("JcScpServer","rtmp://localhost/live"); //流媒体服务器
-so.addVariable("JcScpVideoPath","changeme"); //直播流名称
+    <div class="container" style="height: 700px">
+    	
+    	<!-- 房间左侧 -->
+    	<div class="room-left fl">
+    		<!-- 主播信息 -->
+    		<div class="room-mes">
+    			<div class="archor-pic fl">
+    				<img class="img-rounded header-pic" alt="主播头像" src="styles/images/archor-pic.jpg">
+    			</div>
+    			
+    			<div class="relate-text fl">
+    				<div class="room-title">
+    					<h3 name="title">啦啦啦啦啦啦</h3>
+    				</div>
+    				<div class="room-type">
+    					<h5 name="type">英雄联盟</h5>
+    				</div>
+    				<div class="">
+    					<ul class="info-list list-inline">
+    						<li><h5 name="archor-name">王重阳</h5></li>
+    						<li><h5 name="wacther-num">80000</h5></li>
+    						<li><h5 name="present-num">111t</h5></li>
+    					</ul>
+    				</div>
+    			</div>
+    			
+    			<div class="star fr">
+    				<a class="btn btn-default" href="#" role="button">关注</a>
+    				<a class="btn btn-default" href="#">100000</a>
+    			</div>
+    		</div>
+    		
+    		<!-- 播放器 -->
+    		<div>
+    			<div class="close_light_bg" id="close_light_bg"></div>
 
-so.addVariable("JcScpAutoPlay","yes"); //是否自动播放
-so.addVariable("JcScpImg","images/startpic.jpg"); //视频缩略图
-//-----------------------------------------
-so.addVariable("JcScpSharetitle","直播演示实例"); //视频标题
-so.write("CuPlayer");
+				<div class="video" id="CuPlayer">
+					<b><img src="images/loading.gif" />网页视频播放器加载中，请稍后...&gt;&gt;</a></b>
+				</div>
+    		</div>
+    		
+    		<!--礼物 -->
+    	</div>
+    	
+    	
+    	<!-- 房间右侧 -->
+    	<div class="room-right fr">
+    		<div class="well">弹幕区</div>	
+    	</div>
+    
+    
+
+	</div> <!-- /container -->
+
+
+
+<script type="text/javascript">
+	var so = new SWFObject("styles/xml/player.swf","myCuPlayer","700","410","9","#000000");
+	so.addParam("allowfullscreen","true");
+	so.addParam("allowscriptaccess","always");
+	so.addParam("wmode","opaque");
+	so.addParam("quality","high");
+	so.addParam("salign","lt");
+	//播放器设置文件-----------------------------
+	so.addVariable("JcScpFile","styles/xml/CuSunV2setLive.xml"); //配置文件
+	//视频文件及略缩图--------------------------
+	/* 以下这行仅为rtmp直播时写法示例，直播信号是关的，请对应换成你自己的直播流使用 */
+	so.addVariable("JcScpServer","rtmp://localhost/live"); //流媒体服务器
+	so.addVariable("JcScpVideoPath","changeme"); //直播流名称
+
+	so.addVariable("JcScpAutoPlay","yes"); //是否自动播放
+	so.addVariable("JcScpImg","styles/images/startpic.jpg"); //视频缩略图
+	//-----------------------------------------
+	so.addVariable("JcScpSharetitle","直播演示实例"); //视频标题
+	so.write("CuPlayer");
 </script>
 <script language=javascript src="styles/js/jquery-1.4.2.min.js" type=text/javascript></script> 
 <script language=javascript src="styles/js/action.js" type=text/javascript></script>
-	</div> <!-- /container -->
+	
 
 
     <!-- Bootstrap core JavaScript
