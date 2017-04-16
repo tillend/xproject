@@ -7,6 +7,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" href="styles/images/favicon.png">
+		<link rel="shortcut icon" type="image/png" href="styles/images/favicon.png"/>
         <title>登录</title>
 
         <!-- CSS -->
@@ -21,8 +23,8 @@
 
     </head>
 
-    <body>
-		    <!-- Fixed navbar -->
+<body>
+	<!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">

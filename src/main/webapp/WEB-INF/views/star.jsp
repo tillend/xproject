@@ -12,9 +12,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" type="image/png" href="styles/images/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="styles/images/favicon.png"/>
 
-    <title>直播平台</title>
+    <title>直播平台-我的关注</title>
 
     <!-- Bootstrap core CSS -->
     <link href="styles/css/bootstrap.min.css" rel="stylesheet">
