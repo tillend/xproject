@@ -73,7 +73,7 @@
                         			<h2>注册账号</h2>
                             		<h4>
                             			<a href="/login">登录</a><b> | </b>
-                            			<a class=".active" href="/sign_up">注册</a>
+                            			<a href="/sign_up">注册</a>
                             		</h4>
                                     
                         		</div>

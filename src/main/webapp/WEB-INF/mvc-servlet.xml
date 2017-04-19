@@ -54,6 +54,13 @@
 		</property>
 	</bean>
 	
+	<bean id="loginInterceptor" class="cn.stu.edu.lin.interceptor.LoginInterceptor"></bean>
+	
 	<mvc:view-controller path="/" view-name="redirect:/index" />
+	
+	<!-- 登录拦截器注入 -->
+	<mvc:interceptors>
+		<ref bean="loginInterceptor" />
+	</mvc:interceptors>
 
 </beans>
