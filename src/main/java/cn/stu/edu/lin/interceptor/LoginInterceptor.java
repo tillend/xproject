@@ -2,9 +2,9 @@ package cn.stu.edu.lin.interceptor;
 
 import java.io.IOException;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -18,6 +18,7 @@ import com.alibaba.fastjson.JSON;
 
 import cn.stu.edu.lin.common.Resp;
 import cn.stu.edu.lin.common.RespCode;
+import cn.stu.edu.lin.util.ServletUtils;
 
 /**
  * 登录认证的拦截器
@@ -82,9 +83,9 @@ public class LoginInterceptor extends HandlerInterceptorAdapter implements BeanP
 
 	// 校检登录态
 	private boolean checkLogin(HttpServletRequest request) {
-		// 获取Session
-		HttpSession session = request.getSession();
-		String userId = (String) session.getAttribute("userId");
+		// 获取Cookie
+		Cookie[] cookies = request.getCookies();
+		String userId = ServletUtils.getCookieValue(cookies, "userId");
 
 		return StringUtils.isNotEmpty(userId);
 	}

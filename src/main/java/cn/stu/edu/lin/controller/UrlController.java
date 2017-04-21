@@ -12,7 +12,7 @@ public class UrlController {
 		return "index";
 	}
 
-	@RequestMapping("/login")
+	@RequestMapping("/loginPage")
 	public String toLogin() {
 		return "login";
 	}
