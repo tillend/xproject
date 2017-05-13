@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.alibaba.fastjson.JSON;
 
 import cn.stu.edu.lin.model.User;
-import cn.stu.edu.lin.service.IUserService;
+import cn.stu.edu.lin.service.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:applicationContext.xml" })
@@ -18,7 +18,7 @@ public class TestMyBatis {
 	private static Logger logger = Logger.getLogger(TestMyBatis.class);
 
 	@Autowired
-	private IUserService userService;
+	private UserService userService;
 
 	@Test
 	public void test1() {

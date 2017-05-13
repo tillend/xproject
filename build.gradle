@@ -36,6 +36,7 @@ ext{
 	jackson2Version="2.4.6"
 	servlet_apiVersion="3.0.1"
 	jsp_apiVersion="2.2.1"
+	dozer_apiVersion="5.5.1"
 }
 
 dependencies {
@@ -87,5 +88,8 @@ dependencies {
 
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
+    
+    //dozer
+    compile "net.sf.dozer:dozer:$dozer_apiVersion"
 }
 

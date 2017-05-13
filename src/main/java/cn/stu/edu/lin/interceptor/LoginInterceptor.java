@@ -51,13 +51,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter implements BeanP
 
 		HandlerMethod method = (HandlerMethod) handler;
 
-		// 去除DisableSessionFilter
-		// if (!isMultipartMethod(method) && !(request instanceof
-		// DisableSessionHttpServletRequest)) {
-		// throw new IllegalStateException("请求状态不正确，请在 web.xml 中配置 " +
-		// DisableSessionFilter.class.getName() + " 过滤器");
-		// }
-
 		// Controller 方法标注有 @IgnoreLogin
 		if (isIgnoreLoginMethod(method)) {
 			log.debug("IgnoreLogin, uri = {}", uri);
@@ -85,7 +78,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter implements BeanP
 	private boolean checkLogin(HttpServletRequest request) {
 		// 获取Cookie
 		Cookie[] cookies = request.getCookies();
-		String userId = ServletUtils.getCookieValue(cookies, "userId");
+		String userId = ServletUtils.getCookieValue(cookies, "uid");
 
 		return StringUtils.isNotEmpty(userId);
 	}

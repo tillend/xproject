@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cn.stu.edu.lin.common.Resp;
 import cn.stu.edu.lin.common.RespCode;
-import cn.stu.edu.lin.service.IUserService;
+import cn.stu.edu.lin.service.UserService;
 import cn.stu.edu.lin.util.ServletUtils;
+import cn.stu.edu.lin.vo.req.LoginReqVO;
+import cn.stu.edu.lin.vo.resp.LoginRespVO;
+import cn.stu.edu.lin.vo.resp.LogoutRespVO;
 import cn.sut.edu.lin.annotation.IgnoreLogin;
 
 @RestController
@@ -19,20 +22,29 @@ import cn.sut.edu.lin.annotation.IgnoreLogin;
 public class LoginController extends AbstractController {
 
 	@Autowired
-	private IUserService userService;
+	private UserService userService;
 
 	@IgnoreLogin
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ResponseEntity<Resp> userLogin(HttpServletResponse response) {
+	public ResponseEntity<Resp> userLogin(HttpServletResponse response, LoginReqVO userVO) {
 		ResponseEntity<Resp> responseEntity = null;
+		LoginRespVO respVO = new LoginRespVO();
 
 		try {
-			// TODO check user
-			String userId = "1";
+			// 校检用户
+			int userId = userVO.getUserId();
+			String password = userVO.getPassword();
+			boolean result = userService.checkUser(userId, password);
 
-			ServletUtils.setCookie(request, response, "userId", userId);
+			if (result) {
+				ServletUtils.setCookie(request, response, "uid", String.valueOf(userId));
 
-			responseEntity = Resp.createSuccess(null);
+				respVO.setResult("1");
+			} else {
+				respVO.setResult("0");
+			}
+
+			responseEntity = Resp.createSuccess(respVO);
 		} catch (Exception e) {
 			responseEntity = Resp.createError(RespCode.BUSINESS_INVALID, "login.fail", "登录失败");
 		}
@@ -43,9 +55,14 @@ public class LoginController extends AbstractController {
 	@RequestMapping(value = "/logout", method = RequestMethod.POST)
 	public ResponseEntity<Resp> userLogout(HttpServletResponse response) {
 		ResponseEntity<Resp> responseEntity = null;
+		LogoutRespVO respVO = new LogoutRespVO();
 
 		try {
-			ServletUtils.deleteCookie(request, response, "userId");
+			ServletUtils.deleteCookie(request, response, "uid");
+
+			respVO.setResult("1");
+
+			responseEntity = Resp.createSuccess(respVO);
 
 		} catch (Exception e) {
 			responseEntity = Resp.createError(RespCode.BUSINESS_INVALID, "system.error", "系统错误");
