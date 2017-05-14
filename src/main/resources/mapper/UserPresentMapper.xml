@@ -16,6 +16,12 @@
     from user_present
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectUserIntegral" resultMap="BaseResultMap">
+    select *
+    from user_present
+    where userId = #{userid,jdbcType=INTEGER}
+    	& presentId = #{presentid,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from user_present
     where id = #{id,jdbcType=INTEGER}

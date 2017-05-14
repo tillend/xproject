@@ -1,6 +1,6 @@
-package cn.stu.edu.lin.model;
+package cn.stu.edu.lin.vo.resp;
 
-public class Room {
+public class RoomInfoRespVO {
     private Integer roomnum;
 
     private Integer anchorid;

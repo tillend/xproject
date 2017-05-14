@@ -6,4 +6,10 @@ public interface RoomService {
 
 	public Room getRoom(int roomNum);
 
+	public Room getRoomByAnchorId(int achorId);
+
+	public int insertRoom(int anchorId);
+
+	public int updateRoomInfo(Room record);
+
 }

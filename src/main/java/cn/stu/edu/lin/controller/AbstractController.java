@@ -19,4 +19,11 @@ public class AbstractController {
 
 	}
 
+	protected int getAnchorId() {
+		Cookie[] cookies = request.getCookies();
+		String userId = ServletUtils.getCookieValue(cookies, "aid");
+		return Integer.parseInt(userId);
+
+	}
+
 }

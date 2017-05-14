@@ -30,7 +30,12 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public int updateUserInfo(User record) {
-		return userDao.updateByPrimaryKey(record);
+		return userDao.updateByPrimaryKeySelective(record);
+	}
+
+	@Override
+	public int insertUser(User record) {
+		return userDao.insert(record);
 	}
 
 }

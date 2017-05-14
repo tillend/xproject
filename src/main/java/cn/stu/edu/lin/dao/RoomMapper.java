@@ -3,15 +3,17 @@ package cn.stu.edu.lin.dao;
 import cn.stu.edu.lin.model.Room;
 
 public interface RoomMapper {
-    int deleteByPrimaryKey(Integer roomnum);
+	int deleteByPrimaryKey(Integer roomnum);
 
-    int insert(Room record);
+	int insert(Room record);
 
-    int insertSelective(Room record);
+	int insertSelective(Room record);
 
-    Room selectByPrimaryKey(Integer roomnum);
+	Room selectByPrimaryKey(Integer roomnum);
 
-    int updateByPrimaryKeySelective(Room record);
+	Room selectByAnchorId(Integer anchorid);
 
-    int updateByPrimaryKey(Room record);
+	int updateByPrimaryKeySelective(Room record);
+
+	int updateByPrimaryKey(Room record);
 }

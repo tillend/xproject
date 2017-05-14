@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cn.stu.edu.lin.common.Resp;
 import cn.stu.edu.lin.common.RespCode;
+import cn.stu.edu.lin.model.User;
 import cn.stu.edu.lin.service.UserService;
 import cn.stu.edu.lin.util.ServletUtils;
 import cn.stu.edu.lin.vo.req.LoginReqVO;
@@ -40,6 +41,14 @@ public class LoginController extends AbstractController {
 				ServletUtils.setCookie(request, response, "uid", String.valueOf(userId));
 
 				respVO.setResult("1");
+
+				// 若是主播,设置aid的cookie
+				User user = userService.getUserById(userId);
+				Integer anchorId = user.getAnchorid();
+				if (null != anchorId && !anchorId.equals(0)) {
+					ServletUtils.setCookie(request, response, "aid", String.valueOf(anchorId));
+				}
+
 			} else {
 				respVO.setResult("0");
 			}

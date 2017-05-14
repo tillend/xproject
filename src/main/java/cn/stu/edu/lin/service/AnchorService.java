@@ -6,4 +6,6 @@ public interface AnchorService {
 
 	public Anchor getAnchor(int anchorId);
 
+	public int insertAnchor(Anchor anchor);
+
 }

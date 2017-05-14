@@ -3,15 +3,17 @@ package cn.stu.edu.lin.dao;
 import cn.stu.edu.lin.model.UserPresent;
 
 public interface UserPresentMapper {
-    int deleteByPrimaryKey(Integer id);
+	int deleteByPrimaryKey(Integer id);
 
-    int insert(UserPresent record);
+	int insert(UserPresent record);
 
-    int insertSelective(UserPresent record);
+	int insertSelective(UserPresent record);
 
-    UserPresent selectByPrimaryKey(Integer id);
+	UserPresent selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(UserPresent record);
+	int updateByPrimaryKeySelective(UserPresent record);
 
-    int updateByPrimaryKey(UserPresent record);
+	int updateByPrimaryKey(UserPresent record);
+
+	UserPresent selectUserIntegral(Integer userId, Integer presentId);
 }

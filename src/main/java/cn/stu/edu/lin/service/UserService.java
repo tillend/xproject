@@ -9,4 +9,6 @@ public interface UserService {
 
 	public int updateUserInfo(User record);
 
+	public int insertUser(User record);
+
 }

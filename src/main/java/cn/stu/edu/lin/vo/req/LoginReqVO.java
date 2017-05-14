@@ -6,15 +6,15 @@ public class LoginReqVO implements Serializable {
 
 	private static final long serialVersionUID = -1912047702407310420L;
 
-	private Integer userId;
+	private Integer userid;
 	private String password;
 
 	public Integer getUserId() {
-		return userId;
+		return userid;
 	}
 
 	public void setUserId(Integer userId) {
-		this.userId = userId;
+		this.userid = userId;
 	}
 
 	public String getPassword() {
