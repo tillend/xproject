@@ -3,9 +3,10 @@ package cn.stu.edu.lin.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.dozer.DozerBeanMapper;
+import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,7 +47,7 @@ public class UserController extends AbstractController {
 	private RoomService roomService;
 
 	@Autowired
-	private DozerBeanMapper beanMapper;
+	private Mapper beanMapper;
 
 	@RequestMapping(value = "/getUserBasicInfo", method = RequestMethod.GET)
 	public ResponseEntity<Resp> getUserBasicInfo() {
@@ -159,7 +160,7 @@ public class UserController extends AbstractController {
 	}
 
 	@RequestMapping(value = "/updateUserInfo", method = RequestMethod.POST)
-	public ResponseEntity<Resp> updateUserInfo(UpdateUserInfoReqVO reqVO) {
+	public ResponseEntity<Resp> updateUserInfo(@RequestBody UpdateUserInfoReqVO reqVO) {
 		ResponseEntity<Resp> responseEntity = null;
 
 		try {
@@ -183,7 +184,7 @@ public class UserController extends AbstractController {
 	}
 
 	@RequestMapping(value = "/star", method = RequestMethod.POST)
-	public ResponseEntity<Resp> star(StarReqVO reqVO) {
+	public ResponseEntity<Resp> star(@RequestBody StarReqVO reqVO) {
 		ResponseEntity<Resp> responseEntity = null;
 
 		try {

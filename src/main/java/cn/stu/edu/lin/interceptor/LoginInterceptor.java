@@ -44,8 +44,9 @@ public class LoginInterceptor extends HandlerInterceptorAdapter implements BeanP
 		// System.out.println(uri);
 
 		if (!(handler instanceof HandlerMethod)) {
-			log.warn("Handler is not HandlerMethod type, URI = {} , handler = {}", uri,
-					handler == null ? "null" : handler.getClass());
+			// log.warn("Handler is not HandlerMethod type, URI = {} , handler =
+			// {}", uri,
+			// handler == null ? "null" : handler.getClass());
 			return true;
 		}
 
@@ -53,7 +54,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter implements BeanP
 
 		// Controller 方法标注有 @IgnoreLogin
 		if (isIgnoreLoginMethod(method)) {
-			log.debug("IgnoreLogin, uri = {}", uri);
+			// log.debug("IgnoreLogin, uri = {}", uri);
 			return true;
 		}
 
@@ -88,7 +89,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter implements BeanP
 		try {
 			response.getWriter().write(getAccessDenied(RespCode.ACCESS_DENIED, "not.login", "用户未登录"));
 		} catch (IOException e) {
-			log.error("Write accessDenied JSON cause error", e);
+			// log.error("Write accessDenied JSON cause error", e);
 		}
 	}
 

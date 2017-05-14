@@ -91,5 +91,6 @@ dependencies {
     
     //dozer
     compile "net.sf.dozer:dozer:$dozer_apiVersion"
+    compile "net.sf.dozer:dozer-spring:$dozer_apiVersion"
 }
 

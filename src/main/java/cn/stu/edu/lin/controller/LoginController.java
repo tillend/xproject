@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +20,7 @@ import cn.stu.edu.lin.vo.resp.LogoutRespVO;
 import cn.sut.edu.lin.annotation.IgnoreLogin;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/user")
 public class LoginController extends AbstractController {
 
 	@Autowired
@@ -27,7 +28,7 @@ public class LoginController extends AbstractController {
 
 	@IgnoreLogin
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ResponseEntity<Resp> userLogin(HttpServletResponse response, LoginReqVO userVO) {
+	public ResponseEntity<Resp> userLogin(HttpServletResponse response, @RequestBody LoginReqVO userVO) {
 		ResponseEntity<Resp> responseEntity = null;
 		LoginRespVO respVO = new LoginRespVO();
 

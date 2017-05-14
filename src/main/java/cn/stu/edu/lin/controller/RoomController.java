@@ -1,8 +1,9 @@
 package cn.stu.edu.lin.controller;
 
-import org.dozer.DozerBeanMapper;
+import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,11 +34,11 @@ public class RoomController extends AbstractController {
 	private AnchorService anchorService;
 
 	@Autowired
-	private DozerBeanMapper beanMapper;
+	private Mapper beanMapper;
 
 	@IgnoreLogin
 	@RequestMapping(value = "/getRoomInfo", method = RequestMethod.GET)
-	public ResponseEntity<Resp> getRoomInfo(RoomInfoReqVO reqVO) {
+	public ResponseEntity<Resp> getRoomInfo(@RequestBody RoomInfoReqVO reqVO) {
 		ResponseEntity<Resp> responseEntity = null;
 
 		try {
@@ -57,7 +58,7 @@ public class RoomController extends AbstractController {
 
 	@IgnoreLogin
 	@RequestMapping(value = "/getRoomAllInfo", method = RequestMethod.GET)
-	public ResponseEntity<Resp> getRoomAllInfo(RoomInfoReqVO reqVO) {
+	public ResponseEntity<Resp> getRoomAllInfo(@RequestBody RoomInfoReqVO reqVO) {
 		ResponseEntity<Resp> responseEntity = null;
 
 		try {
@@ -107,7 +108,7 @@ public class RoomController extends AbstractController {
 	}
 
 	@RequestMapping(value = "/updateRoomInfo", method = RequestMethod.POST)
-	public ResponseEntity<Resp> updateRoomInfo(UpdateRoomInfoReqVO reqVO) {
+	public ResponseEntity<Resp> updateRoomInfo(@RequestBody UpdateRoomInfoReqVO reqVO) {
 		ResponseEntity<Resp> responseEntity = null;
 
 		try {

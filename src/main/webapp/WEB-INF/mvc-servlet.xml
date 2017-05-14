@@ -56,6 +56,8 @@
 	
 	<bean id="loginInterceptor" class="cn.stu.edu.lin.interceptor.LoginInterceptor"></bean>
 	
+	<bean id="beanMapper" class="org.dozer.spring.DozerBeanMapperFactoryBean"></bean>
+	
 	<mvc:view-controller path="/" view-name="redirect:/index" />
 	
 	<!-- 登录拦截器注入 -->

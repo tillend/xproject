@@ -1,8 +1,9 @@
 package cn.stu.edu.lin.controller;
 
-import org.dozer.DozerBeanMapper;
+import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,11 +25,11 @@ public class PassController extends AbstractController {
 	private UserService userService;
 
 	@Autowired
-	private DozerBeanMapper beanMapper;
+	private Mapper beanMapper;
 
 	@IgnoreLogin
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public ResponseEntity<Resp> register(RegisterReqVO reqVO) {
+	public ResponseEntity<Resp> register(@RequestBody RegisterReqVO reqVO) {
 		ResponseEntity<Resp> responseEntity = null;
 
 		try {
@@ -56,7 +57,7 @@ public class PassController extends AbstractController {
 	}
 
 	@RequestMapping(value = "/resetPassword", method = RequestMethod.POST)
-	public ResponseEntity<Resp> userLogout(ResetPasswordReqVO reqVO) {
+	public ResponseEntity<Resp> userLogout(@RequestBody ResetPasswordReqVO reqVO) {
 		ResponseEntity<Resp> responseEntity = null;
 
 		try {

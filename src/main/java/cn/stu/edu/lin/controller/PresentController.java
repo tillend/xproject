@@ -1,8 +1,9 @@
 package cn.stu.edu.lin.controller;
 
-import org.dozer.DozerBeanMapper;
+import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,10 +26,10 @@ public class PresentController extends AbstractController {
 	private PresentService presentService;
 
 	@Autowired
-	private DozerBeanMapper beanMapper;
+	private Mapper beanMapper;
 
 	@RequestMapping(value = "/buy", method = RequestMethod.POST)
-	public ResponseEntity<Resp> buy(PresentBuyReqVO reqVO) {
+	public ResponseEntity<Resp> buy(@RequestBody PresentBuyReqVO reqVO) {
 		ResponseEntity<Resp> responseEntity = null;
 
 		try {
@@ -48,7 +49,7 @@ public class PresentController extends AbstractController {
 	}
 
 	@RequestMapping(value = "/sent", method = RequestMethod.GET)
-	public ResponseEntity<Resp> sent(PresentSentReqVO reqVO) {
+	public ResponseEntity<Resp> sent(@RequestBody PresentSentReqVO reqVO) {
 		ResponseEntity<Resp> responseEntity = null;
 
 		try {

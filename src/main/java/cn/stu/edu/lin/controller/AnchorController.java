@@ -1,8 +1,9 @@
 package cn.stu.edu.lin.controller;
 
-import org.dozer.DozerBeanMapper;
+import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +24,7 @@ public class AnchorController extends AbstractController {
 	private AnchorService anchorService;
 
 	@Autowired
-	private DozerBeanMapper beanMapper;
+	private Mapper beanMapper;
 
 	@RequestMapping(value = "/getArchorInfo", method = RequestMethod.GET)
 	public ResponseEntity<Resp> getArchorInfo() {
@@ -45,7 +46,7 @@ public class AnchorController extends AbstractController {
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public ResponseEntity<Resp> register(AnchorRegisterReqVO reqVO) {
+	public ResponseEntity<Resp> register(@RequestBody AnchorRegisterReqVO reqVO) {
 		ResponseEntity<Resp> responseEntity = null;
 
 		try {
