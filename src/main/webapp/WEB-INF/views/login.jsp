@@ -20,11 +20,91 @@
         <link rel="stylesheet" href="styles/css/login.css">
         <link rel="stylesheet" href="styles/css/list.css">
 
+         <script type="text/javascript">
+        function login() {
+        	//var local = $("#localRepoPath").val();
+            //var data;
+			
+            
+			var loginReqVO = new Object();
+			loginReqVO.userId = $("#form-username").val();
+			loginReqVO.password = $("#form-password").val();
 
+            $.ajax({
+                url: '/xproject/user/login',
+                type: 'POST',
+                contentType: 'application/json;charset=utf-8', //设置请求头信息
+                async: false,
+                dataType: 'json',
+                data: JSON.stringify(loginReqVO),    //将Json对象序列化成Json字符串，JSON.stringify()原生态方法
+                success : function (r) {
+                        //alert(r.data);   
+                        var data = r.data;
+                        //$("#form-username").attr("value", data.result);
+                        var code = r.code;
+                        
+                        
+                        if(code == 0){
+                        	alert('登录成功');
+                        	window.location.href = 'http://localhost:8080/xproject/index';
+                        }else if(code == 402){
+                        	alert('账号或密码错误');
+                        }
+                	
+                },
+                error: function(){
+                    alert('Error');
+                }
+            });
+            //handleData(data); 
+            
+        }
+
+    </script>
+    
+        </script>
+    
+             <script type="text/javascript">
+        function logout() {
+            $.ajax({
+                url: '/xproject/user/logout',
+                type: 'POST',
+                contentType: 'application/json;charset=utf-8', //设置请求头信息
+                async: false,
+                dataType: 'json',
+                success : function (r) {
+                        //alert(r.data);   
+                        var data = r.data;
+                        //$("#form-username").attr("value", data.result);
+                        var code = r.code;
+                        
+                        
+                        if(code == 0){
+                        	alert('注销成功');
+                        	window.location.href = '/xproject/index';
+                        }else if(code == 402){
+                        	alert('系统错误');
+                        }else if(code == 405){
+                        	alert('请登录');
+                        	window.location.href = '/xproject/login';
+                        }
+                	
+                },
+                error: function(){
+                    alert('Error');
+                }
+            });
+            //handleData(data); 
+            
+        }
+
+    </script>
+    
+           
     </head>
 
 <body>
-	<!-- Fixed navbar -->
+    <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -38,7 +118,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">首页</a></li>
+            <li><a href="/xproject">首页</a></li>
             <li><a href="#about">热门</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类<span class="caret"></span></a>
@@ -54,9 +134,9 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">关注</a></li>
-            <li class="active"><a href="../navbar-static-top/">登录</a></li>
-            <li><a href="./">注销<span class="sr-only">(current)</span></a></li>
+            <li><a href="/xproject/star">关注</a></li>
+            <li class="active"><a href="/xproject/login">登录<span class="sr-only">(current)</span></a></li>
+            <li><a href="#" onclick="logout()">注销</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -74,8 +154,8 @@
                         		<div class="form-top-left">
                         			<h2>登录希声</h2>
                             		<h4>
-                            			<a href="/login">登录</a><b> | </b>
-                            			<a href="/sign_up">注册</a>
+                            			<a href="/xproject/login">登录</a><b> | </b>
+                            			<a href="/xproject/sign_up">注册</a>
                             		</h4>
                                     
                         		</div>
@@ -84,7 +164,6 @@
                         		</div>
                             </div>
                             <div class="form-bottom">
-			                    <form role="form" action="" method="post" class="login-form">
 			                    	<div class="form-group">
 			                    		<label class="sr-only" for="form-username">用户名</label>
 			                        	<input type="text" name="form-username" placeholder="用户名" class="form-username form-control" id="form-username">
@@ -93,8 +172,7 @@
 			                        	<label class="sr-only" for="form-password">密码</label>
 			                        	<input type="password" name="form-password" placeholder="密码" class="form-password form-control" id="form-password">
 			                        </div>
-			                        <button type="submit" class="btn">登录</button>
-			                    </form>
+			                        <button type="submit" class="btn" onclick="login()">登录</button>
 		                    </div>
                         </div>
                     </div>
@@ -110,6 +188,8 @@
         <script src="styles/js/bootstrap.min.js"></script>
         <script src="styles/js/jquery.backstretch.min.js"></script>
         <script src="styles/js/scripts.js"></script>
+
+
         
         <!--[if lt IE 10]>
             <script src="assets/js/placeholder.js"></script>

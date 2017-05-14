@@ -21,6 +21,44 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link href="styles/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles/css/common.css" rel="stylesheet">
     <link href="styles/css/navbar-fixed-top.css" rel="stylesheet">
+    
+        </script>
+    
+             <script type="text/javascript">
+        function logout() {
+            $.ajax({
+                url: '/xproject/user/logout',
+                type: 'POST',
+                contentType: 'application/json;charset=utf-8', //设置请求头信息
+                async: false,
+                dataType: 'json',
+                success : function (r) {
+                        //alert(r.data);   
+                        var data = r.data;
+                        //$("#form-username").attr("value", data.result);
+                        var code = r.code;
+                        
+                        
+                        if(code == 0){
+                        	alert('注销成功');
+                        	window.location.href = '/xproject/index';
+                        }else if(code == 402){
+                        	alert('系统错误');
+                        }else if(code == 405){
+                        	alert('请登录');
+                        	window.location.href = '/xproject/login';
+                        }
+                	
+                },
+                error: function(){
+                    alert('Error');
+                }
+            });
+            //handleData(data); 
+            
+        }
+
+    </script>
 
   </head>
 
@@ -40,7 +78,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">首页</a></li>
+            <li class="active"><a href="/xproject">首页</a></li>
             <li><a href="#about">热门</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类<span class="caret"></span></a>
@@ -56,9 +94,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">关注</a></li>
-            <li><a href="../navbar-static-top/">登录</a></li>
-            <li class="active"><a href="./">注销<span class="sr-only">(current)</span></a></li>
+            <li><a href="/xproject/star">关注</a></li>
+            <li><a href="/xproject/login">登录</a></li>
+            <li><a href="#" onclick="logout()">注销</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -70,9 +108,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <div class="jumbotron">
         <h2>基于流媒体技术的Web平台视频直播系统</h2>
         <p>　　视频直播是指利用互联网及流媒体技术进行直播，视频因融合了图像、文字、声音等丰富元素，声形并茂，效果极佳，逐渐成为互联网的主流表达方式。随时互联网络技术的发展，网络视频直播倍受关注，视频直播也让网络变得不再虚拟，更具现实也更贴近生活。在此背景下，结合流媒体技术，研发一个视频直播网站，具有一定的理论意义和实际价值。</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">待完善&raquo;</a>
-        </p>
       </div>
       
   		      <div class="jumbotron">

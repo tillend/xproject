@@ -28,11 +28,44 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <script type="text/javascript" src="styles/js/swfobject.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    </script>
+    
+             <script type="text/javascript">
+        function logout() {
+            $.ajax({
+                url: '/xproject/user/logout',
+                type: 'POST',
+                contentType: 'application/json;charset=utf-8', //设置请求头信息
+                async: false,
+                dataType: 'json',
+                success : function (r) {
+                        //alert(r.data);   
+                        var data = r.data;
+                        //$("#form-username").attr("value", data.result);
+                        var code = r.code;
+                        
+                        
+                        if(code == 0){
+                        	alert('注销成功');
+                        	window.location.href = '/xproject/index';
+                        }else if(code == 402){
+                        	alert('系统错误');
+                        }else if(code == 405){
+                        	alert('请登录');
+                        	window.location.href = '/xproject/login';
+                        }
+                	
+                },
+                error: function(){
+                    alert('Error');
+                }
+            });
+            //handleData(data); 
+            
+        }
+
+    </script>
+    
   </head>
 
   <body>
@@ -51,7 +84,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">首页</a></li>
+            <li><a href="/xproject">首页</a></li>
             <li><a href="#about">热门</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类<span class="caret"></span></a>
@@ -67,9 +100,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">关注</a></li>
-            <li><a href="../navbar-static-top/">登录</a></li>
-            <li class="active"><a href="./">注销<span class="sr-only">(current)</span></a></li>
+            <li><a href="/xproject/star">关注</a></li>
+            <li class="active"><a href="/xproject/login">登录<span class="sr-only">(current)</span></a></li>
+            <li><a href="#" onclick="logout()">注销</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
