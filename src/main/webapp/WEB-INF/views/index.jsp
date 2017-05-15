@@ -112,20 +112,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       
   		      <div class="jumbotron">
 <table class="table">
-<tr><td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></td>
-<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
-<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
-<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
-<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
-<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
+<tr>
+<td><a href="/xproject/play"><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></a></td>
+<td><a href="/xproject/play"><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></a></td>
+<td><a href="/xproject/play"><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></a></td>
+<td><a href="/xproject/play"><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></a></td>
+<td><a href="/xproject/play"><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></a></td>
+<td><a href="/xproject/play"><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></a></td>
 </tr>
 
-<tr><td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></td>
-<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
-<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
-<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
-<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
-<td><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" > </td>
+<tr>
+<td><a href="/xproject/play"><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></a></td>
+<td><a href="/xproject/play"><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></a></td>
+<td><a href="/xproject/play"><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></a></td>
+<td><a href="/xproject/play"><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></a></td>
+<td><a href="/xproject/play"><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></a></td>
+<td><a href="/xproject/play"><img src="<%=path %>/styles/images/test.jpg" class="img-responsive" height="150px" width="180px" ></a></td>
 </tr>
 
 </table>

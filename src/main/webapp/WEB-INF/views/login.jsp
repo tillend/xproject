@@ -46,7 +46,7 @@
                         
                         if(code == 0){
                         	alert('登录成功');
-                        	window.location.href = 'http://localhost:8080/xproject/index';
+                        	window.location.href = '/xproject/index';
                         }else if(code == 402){
                         	alert('账号或密码错误');
                         }

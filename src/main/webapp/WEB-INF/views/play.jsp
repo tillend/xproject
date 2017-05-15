@@ -120,15 +120,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			
     			<div class="relate-text fl">
     				<div class="room-title">
-    					<h3 name="title">啦啦啦啦啦啦</h3>
+    					<h3 name="title">大司马：正方形打野</h3>
     				</div>
     				<div class="room-type">
     					<h5 name="type">英雄联盟</h5>
     				</div>
     				<div class="">
     					<ul class="info-list list-inline">
-    						<li><h5 name="archor-name">王重阳</h5></li>
-    						<li><h5 name="wacther-num">80000</h5></li>
+    						<li><h5 name="archor-name">芜湖大司马</h5></li>
+    						<li><h5 name="wacther-num">47.1万</h5></li>
     						<li><h5 name="present-num">111t</h5></li>
     					</ul>
     				</div>
@@ -150,6 +150,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		</div>
     		
     		<!--礼物 -->
+    		<div style="float:right;">
+    			<a onclick="sent()"><img class="img-rounded" src="styles/images/present.png"></a>
+    			<a onclick="sent()"><img class="img-rounded" src="styles/images/present.png"></a>
+    		</div>
     	</div>
     	
     	

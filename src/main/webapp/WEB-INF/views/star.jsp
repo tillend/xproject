@@ -122,7 +122,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="video-list-content">
 				<ul class="video-list">
 　　					<li>    
-						<a class="follow-list-all" href="/dasima" target="_blank">
+						<a class="follow-list-all" href="/xproject/play" target="_blank">
     						<span class="imgbox">
     							<b></b>
        				 			<img src="styles/images/test.jpg" width="283" height="163" class="thumb">
@@ -141,7 +141,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     				</li>
     				
     				<li>    
-						<a class="follow-list-all" href="/dasima" target="_blank">
+						<a class="follow-list-all" href="/xproject/play" target="_blank">
     						<span class="imgbox">
     							<b></b>
        				 			<img src="styles/images/test.jpg" width="283" height="163" class="thumb">
@@ -159,7 +159,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     					</a>
     				</li>
 　　					<li>    
-						<a class="follow-list-all" href="/dasima" target="_blank">
+						<a class="follow-list-all" href="/xproject/play" target="_blank">
     						<span class="imgbox">
     							<b></b>
        				 			<img src="styles/images/test.jpg" width="283" height="163" class="thumb">
@@ -178,7 +178,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     				</li>
     				
     				<li>    
-						<a class="follow-list-all" href="/dasima" target="_blank">
+						<a class="follow-list-all" href="/xproject/play" target="_blank">
     						<span class="imgbox">
     							<b></b>
        				 			<img src="styles/images/test.jpg" width="283" height="163" class="thumb">
@@ -196,7 +196,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     					</a>
     				</li>
 　　					<li>    
-						<a class="follow-list-all" href="/dasima" target="_blank">
+						<a class="follow-list-all" href="/xproject/play" target="_blank">
     						<span class="imgbox">
     							<b></b>
        				 			<img src="styles/images/test.jpg" width="283" height="163" class="thumb">
@@ -215,7 +215,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     				</li>
     				
     				<li>    
-						<a class="follow-list-all" href="/dasima" target="_blank">
+						<a class="follow-list-all" href="/xproject/play" target="_blank">
     						<span class="imgbox">
     							<b></b>
        				 			<img src="styles/images/test.jpg" width="283" height="163" class="thumb">
@@ -234,7 +234,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     				</li>
     				
 　　					<li>    
-						<a class="follow-list-all" href="/dasima" target="_blank">
+						<a class="follow-list-all" href="/xproject/play" target="_blank">
     						<span class="imgbox">
     							<b></b>
        				 			<img src="styles/images/test.jpg" width="283" height="163" class="thumb">
@@ -253,7 +253,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     				</li>
     				
     				<li>    
-						<a class="follow-list-all" href="/dasima" target="_blank">
+						<a class="follow-list-all" href="/xproject/play" target="_blank">
     						<span class="imgbox">
     							<b></b>
        				 			<img src="styles/images/test.jpg" width="283" height="163" class="thumb">

@@ -56,6 +56,45 @@
         }
 
     </script>
+    
+    <script type="text/javascript">
+        function signup() {
+			var registerReqVO = new Object();
+			registerReqVO.userName = $("#form-username").val();
+			registerReqVO.password = $("#form-password").val();    
+			registerReqVO.password2 = $("#form-password2").val(); 
+        	
+            $.ajax({
+                url: '/xproject/user/register',
+                type: 'POST',
+                contentType: 'application/json;charset=utf-8', //设置请求头信息
+                async: false,
+                dataType: 'json',
+                data: JSON.stringify(registerReqVO),    //将Json对象序列化成Json字符串，JSON.stringify()原生态方法
+                success : function (r) {
+                        //alert(r.data);   
+                        var data = r.data;
+                        //$("#form-username").attr("value", data.result);
+                        var code = r.code;
+                        
+                        
+                        if(code == 0){
+                        	alert('注册成功');
+                        	window.location.href = '/xproject/index';
+                        }else if(code == 402){
+                        	alert(r.subMsg);
+                        }
+                	
+                },
+                error: function(){
+                    alert('Error');
+                }
+            });
+            //handleData(data); 
+            
+        }
+
+    </script>
 
 
 </head>
@@ -110,8 +149,8 @@
                         		<div class="form-top-left">
                         			<h2>注册账号</h2>
                             		<h4>
-                            			<a href="/login">登录</a><b> | </b>
-                            			<a href="/sign_up">注册</a>
+                            			<a href="/xproject/login">登录</a><b> | </b>
+                            			<a href="/xproject/sign_up">注册</a>
                             		</h4>
                                     
                         		</div>
@@ -120,7 +159,6 @@
                         		</div>
                             </div>
                             <div class="form-bottom">
-			                    <form role="form" action="" method="post" class="login-form">
 			                    	<div class="form-group">
 			                    		<label class="sr-only" for="form-username">用户名</label>
 			                        	<input type="text" name="form-username" placeholder="用户名" class="form-username form-control" id="form-username">
@@ -133,8 +171,7 @@
 			                        	<label class="sr-only" for="form-password2">再次输入密码</label>
 			                        	<input type="password" name="form-password2" placeholder="再次输入密码" class="form-password form-control" id="form-password2">
 			                        </div>
-			                        <button type="submit" class="btn">注册</button>
-			                    </form>
+			                        <button type="submit" class="btn" onclick="signup()">注册</button>
 		                    </div>
                         </div>
                     </div>
