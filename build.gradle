@@ -37,6 +37,7 @@ ext{
 	servlet_apiVersion="3.0.1"
 	jsp_apiVersion="2.2.1"
 	dozer_apiVersion="5.5.1"
+	aspectj_Version="1.8.9"
 }
 
 dependencies {
@@ -92,5 +93,7 @@ dependencies {
     //dozer
     compile "net.sf.dozer:dozer:$dozer_apiVersion"
     compile "net.sf.dozer:dozer-spring:$dozer_apiVersion"
+    compile "org.aspectj:aspectjtools:$aspectj_Version"
+    compile "org.aspectj:aspectjweaver:$aspectj_Version"
 }
 
